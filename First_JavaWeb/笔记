@@ -1,0 +1,48 @@
+<%--JSP注释--%>
+<!--HTML注释-->
+JSP注释不会被发送到客户端
+
+JSP三个编译指令
+1.page
+2.include
+3.taglib
+
+使用编译指令的格式
+<%@编译指令名 属性名 ="属性值"%>
+
+getServiceInfo方法可以输出info的值
+
+指定错误页面
+1.通过errorPage指定错误页面
+2.在错误页面用isErrorPage="true"指定这个是错误页面 isErrorPage默认值为false
+
+手动建立web应用的步骤：
+1.创建一个空的文件夹，文件夹的名字是web应用的名字
+2.在文件夹下面建立一个WEB-INF文件夹
+3.在WEB-INF文件夹下创建一个web.xml文件，内容如下
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0"
+  metadata-complete="true">
+
+</web-app>
+4.同时在WEB-INF文件夹下创建clssses和lib目录，分别存放class文件和打包后的jar包
+
+
+IDEA 创建的jsp转化为servlet类的存放路径为
+C:\Users\zxy\.IntelliJIdea2017.2\system\tomcat\Unnamed_Light_JavaEE\work\Catalina\localhost\_\org\apache\jsp
+
+5.动作指令
+<jsp:forward page="jsp-result.jsp">
+        <jsp:param name="name" value="lxn"/>
+        <jsp:param name="age" value="12"/>
+    </jsp:forward>
+jsp:forward不会导致地址栏发生变化，请求参数，请求属性都不会丢失
+
+6.静态导入和动态导入的区别
+a.静态导入是把整个页面融合，动态导入是在Servlet中使用include方法引入，使用下面的代码导入
+  org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "index.jsp", out, false);
+b.静态导入时被导入页面的编译指令会起作用，动态导入不起作用
+c.动态导入可以增加额外的参数
