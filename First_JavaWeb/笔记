@@ -90,6 +90,6 @@ Only a type can be imported. tencent.Person resolves to a package
 13.在JSP页面中config.getServletName获取的到的都是jsp
 14.把jsp定义为Servlet,，需要在web.xml中配置 <jsp-file>/configTest2.jsp</jsp-file>，通过
 config.getInitParameter用于获取配置参数，如果配置了JSP页面为Servlet，则只能通过配置的路径
-访问，这样才能获取到参数，此时就不能用jsp页面的名称访问了
+访问，这样才能获取到参数，此时就不能用jsp页面的名称访问了 
 
 
