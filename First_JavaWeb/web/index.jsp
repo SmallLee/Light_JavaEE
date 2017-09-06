@@ -1,4 +1,4 @@
-<%--
+<%@ page import="dao.Person" %><%--
   Created by IntelliJ IDEA.
   User: zxy
   Date: 2017/8/31
@@ -14,6 +14,10 @@
   <body>
   你好吗
   <%=getServletInfo()%>
+  <%
+    Person p = new Person();
+    System.out.println(p.getPersonInfo());
+  %>
 
   </body>
 </html>

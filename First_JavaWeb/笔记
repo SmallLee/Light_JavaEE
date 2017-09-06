@@ -45,4 +45,51 @@ jsp:forward不会导致地址栏发生变化，请求参数，请求属性都不
 a.静态导入是把整个页面融合，动态导入是在Servlet中使用include方法引入，使用下面的代码导入
   org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "index.jsp", out, false);
 b.静态导入时被导入页面的编译指令会起作用，动态导入不起作用
-c.动态导入可以增加额外的参数
+c.动态导入可以增加额外的参数(传递参数到被导入的页面)
+
+6.forward和include很相似，forward用目标页面代替原来页面，include把目标页面插入到原来页面
+
+IntelliJ IDEA 的 .idea 目录加入.gitignore无效的解决方法
+无效的原因是：对应的目录或者文件已经被git跟踪，此时再加入.gitignore后就无效了，
+
+解决办法：
+git rm -r --cached 文件夹或者文件名
+
+7.JSP不允许引用默认包中的类，编译不通过，需要建立包名
+8.JSP的内置对象
+    application
+    request
+    response
+    config
+    exception
+    out
+    page
+    session
+    pageContext
+    在Servlet的_jspService()方法中对这些对象进行初始化，我们写的JSP脚本相当于_jspService部分
+9.不同内置对象的作用
+application
+    在整个Web应用的JSP,Servlet中共享数据
+    访问Web应用的配置参数
+10.编译Servlet需要把Tomcat目录lib下的servlet-api.jar添加到CLASSPATH环境变量，需要带上后面的.jar
+11.手动部署web项目，然后放到tomcat的webapps目录下，当把Person生成的class文件放到WEB-INF下面的classes下时，
+然后在jsp页面中使用Person类，会报下面的错误
+org.apache.jasper.JasperException: Unable to compile class for JSP:
+
+An error occurred at line: [14] in the generated java file: [D:\apache-tomcat-7.0.57-windows-x86\apache-tomcat-7.0.57\work\Catalina\localhost\webDemo\org\apache\jsp\web\a_jsp.java]
+Only a type can be imported. tencent.Person resolves to a package
+
+12.通过application对象回去Web配置参数的步骤
+    在web.xml中
+     <context-param>
+            <param-name>driver</param-name>
+            <param-value>com.mysql.jdbc.Driver</param-value>
+        </context-param>
+    然后在jsp中通过application.getInitParameter("参数名")获取参数
+
+13.在JSP页面中config.getServletName获取的到的都是jsp
+14.把jsp定义为Servlet,，需要在web.xml中配置 <jsp-file>/configTest2.jsp</jsp-file>，通过
+config.getInitParameter用于获取配置参数，如果配置了JSP页面为Servlet，则只能通过配置的路径
+访问，这样才能获取到参数，此时就不能用jsp页面的名称访问了
+
+
