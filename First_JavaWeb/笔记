@@ -79,7 +79,7 @@ org.apache.jasper.JasperException: Unable to compile class for JSP:
 An error occurred at line: [14] in the generated java file: [D:\apache-tomcat-7.0.57-windows-x86\apache-tomcat-7.0.57\work\Catalina\localhost\webDemo\org\apache\jsp\web\a_jsp.java]
 Only a type can be imported. tencent.Person resolves to a package
 
-12.通过application对象回去Web配置参数的步骤
+12.通过application对象获取Web配置参数的步骤
     在web.xml中
      <context-param>
             <param-name>driver</param-name>
@@ -90,6 +90,39 @@ Only a type can be imported. tencent.Person resolves to a package
 13.在JSP页面中config.getServletName获取的到的都是jsp
 14.把jsp定义为Servlet,，需要在web.xml中配置 <jsp-file>/configTest2.jsp</jsp-file>，通过
 config.getInitParameter用于获取配置参数，如果配置了JSP页面为Servlet，则只能通过配置的路径
-访问，这样才能获取到参数，此时就不能用jsp页面的名称访问了 
+访问，这样才能获取到参数，此时就不能用jsp页面的名称访问了
+
+15.如果需要在JSP页面使用exception对象，则要指定当前页面的isErrorPage为true,否则会提示找不到对象
+    异常的类型为<%=exception.getClass()%>
+    异常的信息是<%=exception.getMessage()%>
+
+16.使用out对象输出都可以用输出表达式<%=%>代替
+17.pageContext
+    方法  getAttribute
+          setAttribute(String name,int scope)
+          scope可以是下面四个值
+          PageContext.PAGE_SCOPE
+          PageContext.REQUEST_SCOPE
+          PageContext.SESSION_SCOPE
+          PageContext.APPLICATION_SCOPE
+18.request对象
+    表单域和请求参数的关系(有name属性的表单名才会生成请求参数)
+    a:每个有name的表单域对应一个请求参数
+    b:如果多个表单域有相同的name属性，则只生成一个请求参数，参数的值有多个
+    c:表单的name属性指定请求参数名，value属性指定请求参数值
+    d:如果某个表单域设置了disable="disable",则该表单域不生成请求参数
+
+19. request.setCharacterEncoding(设置request编码采用的字符集
+
+20.request还有两个方法用于设置和获取值
+    setAttribute
+    getAttribute
+    当forward时，请求参数和值都不会丢失
+21.使用request执行forward和include
+      request.getRequestDispatcher("/index.jsp").forward();
+      request.getRequestDispatcher("/index.jsp").forward();
+    getRequestDispatcher中的路径必须以/开头
+
+
 
 
