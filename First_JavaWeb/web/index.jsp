@@ -13,11 +13,10 @@
   </head>
   <body>
   你好吗
-  <%=getServletInfo()%>
-  <%
-    Person p = new Person();
-    System.out.println(p.getPersonInfo());
-  %>
-
+  <%--<%--%>
+    <%--Person p = new Person();--%>
+    <%--System.out.println(p.getPersonInfo());--%>
+  <%--%>--%>
+  adsfd
   </body>
 </html>

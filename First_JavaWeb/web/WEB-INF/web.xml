@@ -50,4 +50,19 @@
         <param-name>password</param-name>
         <param-value>123456</param-value>
     </context-param>
+
+    <!--<servlet>-->
+        <!--<servlet-name>firstservlet</servlet-name>-->
+        <!--<servlet-class>dao.FirstServlet</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>firstservlet</servlet-name>-->
+        <!--<url-pattern>/firstservlet</url-pattern>-->
+    <!--</servlet-mapping>-->
+    <!--随服务一起启动的servlet配置-->
+    <!--<servlet>-->
+        <!--<servlet-name>timerServlet</servlet-name>-->
+        <!--<servlet-class>dao.TimerServlet</servlet-class>-->
+        <!--<load-on-startup>1</load-on-startup>-->
+    <!--</servlet>-->
 </web-app>

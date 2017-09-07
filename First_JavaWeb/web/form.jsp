@@ -11,7 +11,7 @@
     <title>表单发送post请求</title>
 </head>
 <body>
-<form id="form1" action="request1.jsp" method="post">
+<form id="form1" action="firstservlet" method="post">
     用户名：<br/>
     <input type="text" name="name"><br/>
     性别：<br/>

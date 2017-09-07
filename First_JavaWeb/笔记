@@ -139,6 +139,12 @@ config.getInitParameter用于获取配置参数，如果配置了JSP页面为Ser
     session通常用于保存客户端的状态信息，这些信息要保存在服务器的硬盘上，所以要求
     session的属性值是可序列化的
 
+25.JSP和Servlet的区别
+    Servlet中没有内置对象，JSP有内置对象
+    对于静态的html标签，Servlet必须用页面输出流输出
 
+26.如果需要用注解来配置Tomcat启动时，Servlet初始化，需要配置loadOnStartup以及urlPatterns
+@WebServlet(loadOnStartup = 1,urlPatterns = "/timerservlet")
 
-
+27.访问servlet时，要去掉service方法的super.service(req, resp);，否则回报405错
+ HTTP method GET is not supported by this URL
