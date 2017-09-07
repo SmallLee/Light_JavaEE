@@ -123,6 +123,22 @@ config.getInitParameter用于获取配置参数，如果配置了JSP页面为Ser
       request.getRequestDispatcher("/index.jsp").forward();
     getRequestDispatcher中的路径必须以/开头
 
+22.使用response对象可以重定向
+ response.sendRedirect("form.jsp");
+
+ forward和redirect比较
+ a:请求次数
+ b:请求参数是否会丢失
+ c:地址栏的url是否改变
+
+ 23.使用Cookie必须设置生存期限，否则会随着浏览器的关闭而消失
+ 默认情况下，Cookie中不允许有中文，可以通过UrlEncode
+
+ 24.session
+    代表一次会话，从客户端浏览器连接服务，到客户端与服务器断开连接
+    session通常用于保存客户端的状态信息，这些信息要保存在服务器的硬盘上，所以要求
+    session的属性值是可序列化的
+
 
 
 
