@@ -148,3 +148,18 @@ config.getInitParameter用于获取配置参数，如果配置了JSP页面为Ser
 
 27.访问servlet时，要去掉service方法的super.service(req, resp);，否则回报405错
  HTTP method GET is not supported by this URL
+
+28.根据严格的MVC规范，客户的请求先发送到servlet,然后由servlet将请求forward到该jsp页面
+
+29.JSP如果要自定义带属性的标签，要在tag标签下新增attribute节点,attribute节点中可以添加如下属性
+    name            定义属性名称，每个标签的属性名称必须是唯一的
+    required        属性是否是必须的
+    rtexprvalue     在运行表达式时，标签属性是否有效
+    type            定义标签的属性累心，默认String
+    description     描述信息
+    fragment        如果声明了该属性,属性值将被视为一个 JspFragment。
+    属性需要有set方法，否则会报错
+
+30.带标签体的标签
+    可以在标签体内嵌入html代码或者jsp
+
