@@ -178,3 +178,25 @@ http://localhost:8080/rewrite-status
 
 36.Listener
     ServletContextListener：监听web应用的启动和关闭
+    ServletContextAttributeListener:application内的对象被保存，替换，消除时触发
+    ServletRequestListener：请求到达被初始化和请求销毁时触发
+    HttpSessionListener:监听session的创建和销毁
+
+37.Servlet 3.0对应与JSP2.2规范
+
+38.JSP配置
+            <jsp-config>
+                <jsp-property-group>
+                    <!--对哪些文件应用配置-->
+                    <url-pattern>*.jsp</url-pattern>
+                    <!--忽略表达式语言-->
+                    <el-ignored>false</el-ignored>
+                    <!--页面编码-->
+                    <page-encoding>GBK</page-encoding>
+                    <!--不允许使用Java脚本-->
+                    <scripting-invalid>false</scripting-invalid>
+                </jsp-property-group>
+            </jsp-config>
+39.表达式语言的格式
+    ${expression}
+    如果要正常输出$,要写成\$

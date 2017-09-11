@@ -75,4 +75,17 @@
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
+    <!--关于JSP的配置信息-->
+    <jsp-config>
+        <jsp-property-group>
+            <!--对哪些文件应用配置-->
+            <url-pattern>*.jsp</url-pattern>
+            <!--忽略表达式语言-->
+            <el-ignored>false</el-ignored>
+            <!--页面编码-->
+            <page-encoding>GBK</page-encoding>
+            <!--不允许使用Java脚本-->
+            <scripting-invalid>false</scripting-invalid>
+        </jsp-property-group>
+    </jsp-config>
 </web-app>
