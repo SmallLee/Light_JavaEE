@@ -162,4 +162,19 @@ config.getInitParameter用于获取配置参数，如果配置了JSP页面为Ser
 
 30.带标签体的标签
     可以在标签体内嵌入html代码或者jsp
+31.动态属性的标签(可以随意指定标签属性的名称和个数)
+    当前类实现DynamicAttributes类，重写setDynamicAttribute方法，
 
+32.Filter
+请求与响应处理的分界线是执行了FilterChain的doFilter方法
+
+33.request.getServletPath,获得请求的servlet的path
+request.getRequestURL,获取请求的url
+
+34.多个Servlet中相同的代码，可以放到filter中先处理
+
+35.Url Rewrite 可以把动态页面伪装成静态的html页面，使用下面的语句可以查看url rewrite的状态
+http://localhost:8080/rewrite-status
+
+36.Listener
+    ServletContextListener：监听web应用的启动和关闭
