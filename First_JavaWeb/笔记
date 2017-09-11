@@ -200,3 +200,15 @@ http://localhost:8080/rewrite-status
 39.表达式语言的格式
     ${expression}
     如果要正常输出$,要写成\$
+40.表达式内置对象
+        initParam:用于获取请求web应用的参数
+41.JSP自定义函数
+         <!--JSP自定义函数-->
+                <function>
+                //函数名
+                    <name>reverse</name>
+                    //函数处理类
+                    <function-class>function.Functions</function-class>
+                    //自定义函数对应的方法
+                    <function-signature>java.lang.String reverse(java.lang.String)</function-signature>
+                </function>

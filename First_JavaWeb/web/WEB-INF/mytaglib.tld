@@ -66,5 +66,11 @@
         <body-content>empty</body-content>
         <dynamic-attributes>true</dynamic-attributes>
     </tag>
+    <!--JSP自定义函数-->
+        <function>
+            <name>reverse</name>
+            <function-class>function.Functions</function-class>
+            <function-signature>java.lang.String reverse(java.lang.String)</function-signature>
+        </function>
 </taglib>
 
