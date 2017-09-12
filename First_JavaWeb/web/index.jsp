@@ -9,14 +9,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>æ ‡é¢˜</title>
+    <title>±êÌâ</title>
   </head>
   <body>
-  ä½ å¥½å—
-  <%--<%--%>
-    <%--Person p = new Person();--%>
-    <%--System.out.println(p.getPersonInfo());--%>
-  <%--%>--%>
+  ÄãºÃÂð
+  ${1+2}
+  <%
+    Person p = new Person();
+    System.out.println(p.getPersonInfo());
+
+  %>
   adsfd
   </body>
 </html>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlrewrite>
+    <rule>
+        <!--所有匹配如下正则表达式的用户-->
+        <from>/userinf-(\w*).html</from>
+        <!--将被forward到userinf.jsp页面-->
+        <to type="forward">/userinf.jsp?username=$1</to>
+    </rule>
+</urlrewrite>
